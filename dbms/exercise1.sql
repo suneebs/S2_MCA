@@ -1,0 +1,96 @@
+use Exercise1;
+-- create table jobs( job_id int, job_title varchar(20), min_salary int, max_salary int);
+-- show tables;
+-- create table employees(employee_id int primary key, first_name varchar(20), last_name varchar(20), email varchar(20),phone_number int, hire_date date,job_id int, salary int,
+-- manager_id int, department_id int);
+-- create table dependents(dependent_id int primary key, first_name varchar(20),
+-- last_name varchar(20), relationship varchar(20),employee_id int);
+-- create table departments(department_id int primary key, department_name varchar(10),
+-- location_id int);
+-- create table regions(region_id int primary key,region_name varchar(20));
+-- create table countries(country_id int primary key,country_name varchar(20),region_id int);
+-- create table locations(location_id int primary key,street_address varchar(20),
+-- postal_code int,city varchar(20),state_province varchar(20),counter_id int);
+-- desc employees; 
+
+-- setting foreign keys:--------------------------------------------------------
+-- alter table jobs modify column job_id int primary key;
+-- desc jobs;
+-- alter table employees add foreign key(job_id) references jobs(job_id);
+-- alter table employees add foreign key(department_id) references departments(department_id);
+-- alter table dependents add foreign key(employee_id) references employees(employee_id);
+-- alter table countries add foreign key(region_id) references regions(region_id);
+-- alter table locations add foreign key(country_id) references countries(country_id);
+-- alter table employees add foreign key(manager_id) references employees(employee_id);
+-- ALTER TABLE locations
+-- change COLUMN counter_id country_id int;
+-- alter table locations add foreign key(country_id) references countries(country_id);
+-- alter table departments add foreign key(location_id) references locations(location_id);
+-- desc departments;
+-- alter table departments rename to dept;
+-- desc dept;
+-- desc dept;
+-- -----------------------------------------------------------------------------------------------------
+-- alter table employees modify column salary smallint; 
+-- alter table employees add column commission int;
+-- -----------------------------------------------------------------------------------------------------
+-- inserting values:
+
+-- INSERT INTO regions(region_id,region_name) VALUES (1,'Europe'); 
+-- INSERT INTO regions(region_id,region_name) VALUES
+-- (2,'Americas'); 
+-- INSERT INTO regions(region_id,region_name)
+-- VALUES (3,'Asia');
+-- 
+-- INSERT INTO regions(region_id,region_name) VALUES
+-- (2,'Americas'); 
+-- select * from regions;
+-- 
+-- INSERT INTO countries(country_id,country_name,region_id) VALUES
+-- (1,'Argentina',2);
+-- INSERT INTO countries(country_id,country_name,region_id)
+-- VALUES (2,'Australia',3);
+-- INSERT INTO countries(country_id,country_name,region_id)
+-- VALUES (3,'Belgium',1);
+-- INSERT INTO countries(country_id,country_name,region_id) VALUES
+-- (4,'Brazil',2);
+-- INSERT INTO countries(country_id,country_name,region_id)
+-- VALUES (5,'Canada',2);
+
+-- desc locations;
+-- INSERT INTO locations(location_id,street_address,postal_code,city,state_province,country_id) VALUES (1400,'2014 Jabberwocky Rd',26192,'Southlake','Texas',1);
+-- INSERT INTO locations(location_id,street_address,postal_code,city,state_province,country_id) VALUES (1500,'2011 Interiors Blvd',99236,'South SanFrancisco','California',2);
+-- INSERT INTO locations(location_id,street_address,postal_code,city,state_province,country_id) VALUES (1700,'2004 Charade Rd',98199,'Seattle','Washington',3);
+-- desc jobs;
+-- select * from jobs;
+-- INSERT INTO jobs(job_id,job_title,min_salary,max_salary)
+-- VALUES (3,'Administration Assistant',3000,6000);
+-- INSERT INTO jobs(job_id,job_title,min_salary,max_salary)
+-- VALUES (4,'President',20000,40000);
+-- INSERT INTO jobs(job_id,job_title,min_salary,max_salary)VALUES (3,'Admin Assistant',3000,6000);
+
+-- INSERT INTO
+-- departments(department_id,department_name,location_id) VALUES
+-- (1,'Administration',1700);
+-- INSERT INTO
+-- departments(department_id,department_name,location_id) VALUES
+-- (2,'Marketing',1800);
+-- INSERT INTO
+-- departments(department_id,department_name,location_id) VALUES
+-- (3,'Purchasing',1700);
+-- INSERT INTO
+-- departments(department_id,department_name,location_id) VALUES
+-- (4,'Human Resources',2400);
+-- show tables;
+-- INSERT INTO dependents(dependent_id,first_name,last_name,relationship,employee_id)VALUES(1,'Penelope','Gietz','Child',206);
+-- INSERT INTO employees(employee_id,first_name,last_name,email,phone_number,hire_date,job_id,salary,manager_id,department_id)VALUES(100,'Steven','King','steven.king@.org','89643456','1987-06-17',4,24000.00,NULL,9);
+-- INSERT INTO dept(department_id,department_name,location_id)VALUES(1,'Admin',1700);
+-- INSERT INTO dept(department_id,department_name,location_id)VALUES(2,'Marketing',1500);
+-- INSERT INTO dept(department_id,department_name,location_id)VALUES(6,'IT',1400);
+-- INSERT INTO employees(employee_id,first_name,last_name,email,phone_number,hire_date,job_id,salary,manager_id,department_id)VALUES(100,'Steven','King','steven.king.org','5154567','1987-06-17',4,24000.00,NULL,1);
+-- INSERT INTO employees(employee_id,first_name,last_name,email,phone_number,hire_date,job_id,salary,manager_id,department_id)VALUES(101,'Neena','Kochhar','neena.kochhar.org','515568','1989-09-21',1,17000.00,100,2);
+-- INSERT INTO employees(employee_id,first_name,last_name,email,phone_number,hire_date,job_id,salary,manager_id,department_id)VALUES(102,'Lex','DeHaan','lex.dehaan.org','514569','1993-01-13',2,17000.00,100,6);
+-- INSERT INTO dependents(dependent_id,first_name,last_name,relationship,employee_id)VALUES(1,'Penelope','Gietz','Child',100);
+-- INSERT INTO dependents(dependent_id,first_name,last_name,relationship,employee_id)VALUES(2,'Nick','Higgins','Child',101);
+-- INSERT INTO dependents(dependent_id,first_name,last_name,relationship,employee_id)VALUES(3,'Ed','Whalen','Child',102);
+select * from dependents;
